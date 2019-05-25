@@ -18,6 +18,9 @@ $(function() {
           inventoryText = "<strong>Sold Out</strong>";
         var descriptionText = "<p>" + data["description"] + "</p><p>" + inventoryText + "</p>";
         $("#product-" + id).html(descriptionText);
+        jQuery.each(data["orders"],function(i,order){
+          $("product-orders-"+id).append('<li>'+order.id+" "+order.created_at'</li>')
+        })
       });
     });
   });
